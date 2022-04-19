@@ -6,5 +6,5 @@
 
 import Foundation
 
-var game = RpsGame()
-game.startRPS()
+
+startRPS()
