@@ -22,7 +22,7 @@ func decideRSPProcessBy(_ menuChoice: String) {
         print("게임 종료")
     case "1", "2", "3":
         let eachPick: (Rps, Rps) = playRPS(by: menuChoice)
-        let gameResult = pickOutWinner(from: eachPick)
+        let gameResult = pickOutRSPWinner(from: eachPick)
         printRSPResult(basedOn: gameResult)
         
         restartIfTie(judgingBy: gameResult)
@@ -51,7 +51,7 @@ func playRPS(by menuChoice: String) -> (Rps, Rps) {
     return (myRpsPick, computerRpsPick)
 }
 
-func pickOutWinner(from pickOf: (user: Rps, computer: Rps)) -> GameWinner {
+func pickOutRSPWinner(from pickOf: (user: Rps, computer: Rps)) -> GameWinner {
     if pickOf.computer == pickOf.user {
         return .tie
     }
@@ -96,8 +96,8 @@ func decideMJBProcessBy(_ menuChoice: String) {
     case "0":
         print("게임 종료")
     case "1", "2", "3":
-        let eachPick: (Rps, Rps) = playRPS(by: menuChoice)
-        let gameResult = pickOutWinner(from: eachPick)
+        let eachPick: (Mjb, Mjb) = playMJB(by: menuChoice)
+        let gameResult = pickOutMJBWinner(from: eachPick)
         printMJBResult(basedOn: gameResult)
         
         endIfTie(judgingBy: gameResult)
@@ -129,3 +129,33 @@ func endIfTie(judgingBy gameResult: GameWinner) {
         startMJB()
     }
 }
+
+func convertInputToMjb(input: String) -> Mjb {
+    guard let pickNumber = Int(input) else { return Mjb.ready }
+    let myMjbPick:Mjb = Mjb(rawValue: pickNumber) ?? Mjb.ready
+
+    return myMjbPick
+}
+
+func playMJB(by menuChoice: String) -> (Mjb, Mjb) {
+    let myMjbPick = convertInputToMjb(input: menuChoice)
+    guard let computerMjbPick = Mjb(rawValue: Int.random(in: 1...3)) else { return (.ready, .ready) }
+    
+    return (myMjbPick, computerMjbPick)
+}
+
+func pickOutMJBWinner(from pickOf: (user: Mjb, computer: Mjb)) -> GameWinner {
+    if pickOf.computer == pickOf.user {
+        return .tie
+    }
+    
+    switch (pickOf.user, pickOf.computer) {
+    case (.mookk, .jji), (.jji, .bba), (.bba, .mookk):
+        return .usersVictory
+    default:
+        return .computersVictory
+    }
+}
+
+//각각 Rps, Mjb가 들어있는 부분을 공통의 변수로 뚫어놓고 변수명 혹은 파라미터가 그에 맞게 변환해주면 더욱
+//확장성 높은 코드가 될 것 같음! 굳이 따로 똑같은 기능의 함수를 만들 필요가 없을듯!

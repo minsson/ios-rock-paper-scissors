@@ -19,3 +19,10 @@ enum GameWinner: String {
     case computersVictory = "컴퓨터"
     case tie
 }
+
+enum Mjb: Int {
+    case ready = 0
+    case mookk = 1
+    case jji = 2
+    case bba = 3
+}
