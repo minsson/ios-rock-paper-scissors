@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20CF230C280D73F000EB25AC /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF230B280D73F000EB25AC /* functions.swift */; };
 		C7ABA0E1254EA63000B2367D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABA0E0254EA63000B2367D /* main.swift */; };
+		FDCC7E7F280E45E90006CF34 /* sookoong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC7E7E280E45E90006CF34 /* sookoong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		20CF230B280D73F000EB25AC /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		C7ABA0DD254EA63000B2367D /* RockPaperScissors */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RockPaperScissors; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ABA0E0254EA63000B2367D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FDCC7E7E280E45E90006CF34 /* sookoong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sookoong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				C7ABA0E0254EA63000B2367D /* main.swift */,
 				20CF230B280D73F000EB25AC /* functions.swift */,
+				FDCC7E7E280E45E90006CF34 /* sookoong.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7ABA0E1254EA63000B2367D /* main.swift in Sources */,
+				FDCC7E7F280E45E90006CF34 /* sookoong.swift in Sources */,
 				20CF230C280D73F000EB25AC /* functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
