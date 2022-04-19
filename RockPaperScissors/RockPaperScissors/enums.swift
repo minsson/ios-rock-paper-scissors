@@ -14,8 +14,8 @@ enum Rps: Int {
     case paper = 3
 }
 
-enum GameWinner {
-    case usersVictory
-    case computersVictory
+enum GameWinner: String {
+    case usersVictory = "사용자"
+    case computersVictory = "컴퓨터"
     case tie
 }
