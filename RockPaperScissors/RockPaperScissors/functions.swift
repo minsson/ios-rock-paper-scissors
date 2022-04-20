@@ -157,5 +157,3 @@ func pickOutMJBWinner(from pickOf: (user: Mjb, computer: Mjb)) -> GameWinner {
     }
 }
 
-//각각 Rps, Mjb가 들어있는 부분을 공통의 변수로 뚫어놓고 변수명 혹은 파라미터가 그에 맞게 변환해주면 더욱
-//확장성 높은 코드가 될 것 같음! 굳이 따로 똑같은 기능의 함수를 만들 필요가 없을듯!
